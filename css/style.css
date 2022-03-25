@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url('../fonts/OpenSans.ttf');
+}
+@font-face {
+    font-family: "Comic cat";
+    src: url('../fonts/Comic_CAT.otf');
+}
+:root {
+    --bg-color: #fff;
+    --bg-color2: #1c1c1b;
+    --bg-color3: #525252;
+    --black: #000;
+    --cont-color: #ffce1b;
+}
+body {
+    min-height: 2000px;
+    padding-top: 32px;
+}
+a {
+    color: var(--cont-color);
+    text-decoration: none;
+}
+.container {
+    width: 1100px;
+    font-family: "Open Sans";
+    margin: 0 auto;
+    border-radius: 10px;
+    border-top: 2px solid var(--cont-color);
+}
+header {
+    display: flex;
+    height: 75px;
+    justify-content: space-between;
+    align-items: center;
+}
+header a {
+    color: var(--bg-color2);
+}
+header .logo {
+    font-family: "Comic cat";
+    text-align: center;
+    font-size: 28pt;
+    width: 33%;
+    color: var(--cont-color);
+    text-shadow: 0 0 5px #b4b4b4;
+}
+header .menulinks {
+    width: 33%;
+}
+.menulinks a{
+    margin-right: 8px;
+}
+header .info {
+    width: 33%;
+    font-size: 20pt;
+    text-align: right;
+    padding-right: 32px;
+}
+.claimwrapper {
+    width: 100%;
+    height: 400px;
+    background-color: var(--bg-color2);
+    display: flex;
+    align-items: center;
+}
+.claim {
+    width: 50%;
+    padding: 16px;
+    color: var(--bg-color);
+}
+.carsbg {
+    background-image: url("../img/cars.png");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+.tag {
+    padding: 8px;
+}
+.claimform input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border: none;
+    padding: 8px;
+}
+.claimform button {
+    display: block;
+    margin-left: auto;
+    height: 40px;
+    background-color: var(--cont-color);
+    border: none;
+    padding: 8px;
+    font-size: 13pt;
+    border-radius: 8px;
+}
+.reviews{
+    width: 100%;
+    padding: 16px;
+    min-height: 500px;
+}
+.reviews h1{
+    text-align: center;
+    margin-bottom: 16px;
+}
+.reviewswrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.reviewwrapper {
+    width: 33%;
+    text-align: center;
+    border: 2px solid var(--cont-color);
+    border-radius: 8px;
+    min-height: 300px;
+    padding: 8px;
+}
+.reviewwrapper h3{
+    margin-bottom: 16px;
+}
+.addreview {
+    width: 100%;
+    background-color: var(--bg-color3);
+    display: flex;
+    height: 220px;
+}
+.reviewform input, .reviewform textarea{
+    width: 100%;
+    max-width: 100%;
+    height: 40px;
+    max-height: 80px;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+}
+.reviewform button {
+    display: block;
+    margin-left: auto;
+    height: 40px;
+    background-color: var(--cont-color);
+    border: none;
+    padding: 8px;
+    font-size: 13pt;
+    border-radius: 8px;
+}
+footer {
+    background-color: var(--bg-color2);
+    width: 100%;
+    height: 100px;
+    color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+}
+footer .logo {
+    text-align: center;
+    width: 40%;
+    font-family: "Comic cat";
+    font-size: 28pt;
+    color: var(--bg-color);
+    text-shadow: 0 0 5px #555555
+}
+footer .menulinks {
+    width: 60%;
+    text-align: center;
+}
+.carsbg2 {
+    background-image: url("../img/cars2.png");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65%;
+}
