@@ -253,3 +253,6 @@ footer .menulinks {
 .authform input[type="submit"] {
     background-color: var(--cont-color);
 }
+.reviewtext {
+    word-wrap: break-word;
+}
