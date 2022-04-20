@@ -21,11 +21,16 @@
         <div class="claim">
             <h2 id="claimform">Покупаете подержанный автомобиль?</h2>
             <div class="tag">Мы подберем для вас оптимальное предложение на рынке с гарантией технической и юридической чистоты</div><br><br>
+            <? if (!isset($_SESSION['claim'])) { ?>
             <form class="claimform" method="post" action="/scripts/addclaim.php">
+                <? if (isset($_SESSION['errors'])) { echo $_SESSION['errors']; unset($_SESSION['errors']); } ?>
                 <input type="text" name="name" placeholder="Ваше имя...">
-                <input type="text" name="number" placeholder="Номер телефона...">
+                <input type="tel" name="number" placeholder="Номер телефона...">
                 <button type="submit">Подобрать авто</button>
             </form>
+            <? } else { ?>
+                <h3>Заявка была успешно отправлена!</h3>
+            <? } ?>
         </div>
         <div class="claim carsbg"></div>
     </div>

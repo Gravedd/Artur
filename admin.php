@@ -18,7 +18,7 @@ for ($claims = []; $row = mysqli_fetch_assoc($result); $claims[] = $row) ;
 <body>
 <div class="container">
     <?php include_once('components/header.php')?>
-    <div class="adminwrapper">
+    <div class="adminwrapper cabinet">
         <h2>Админ-панель <a href="/scripts/logout.php">ВЫХОД</a></h2>
         <table class="table_price">
             <caption>Заявки</caption>

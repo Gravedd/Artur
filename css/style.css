@@ -19,8 +19,9 @@
     --cont-color: #ffce1b;
 }
 body {
-    min-height: 2000px;
+    padding-bottom: 32px;
     padding-top: 32px;
+    background-color: #f1f1f1;
 }
 a {
     color: var(--cont-color);
@@ -32,12 +33,15 @@ a {
     margin: 0 auto;
     border-radius: 10px;
     border-top: 2px solid var(--cont-color);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
 }
 header {
     display: flex;
     height: 75px;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--bg-color);
+    border-radius: 10px 10px 0 0;
 }
 header a {
     color: var(--bg-color2);
@@ -104,12 +108,13 @@ header .info {
 }
 .reviews{
     width: 100%;
-    padding: 16px;
-    min-height: 500px;
+    padding: 16px 16px 58px 16px;
+    background-color: var(--bg-color);
 }
 .reviews h1{
     text-align: center;
     margin-bottom: 16px;
+    font-size: 23pt;
 }
 .reviewswrapper {
     width: 100%;
@@ -186,6 +191,17 @@ footer .menulinks {
     min-height: 500px;
     border-top: 2px solid var(--cont-color);
     padding: 8px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.adminwrapper.cabinet {
+    display: block;
+}
+.adminwrapper h2 {
+    font-size: 23pt;
 }
 .table_price {
     border-collapse: collapse;
@@ -235,10 +251,9 @@ footer .menulinks {
 }
 .authwrapper {
     width: 50%;
-    margin: 0 auto;
     background-color: var(--bg-color2);
-    border-radius: 8px;
-    min-height: 300px;
+    border-radius: 16px;
+    margin-top: 16px;
 }
 .authform {
     padding: 16px;
