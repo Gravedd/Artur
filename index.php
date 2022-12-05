@@ -34,6 +34,14 @@
         </div>
         <div class="claim carsbg"></div>
     </div>
+    <section class="tosell">
+        <h1>Готовые предложения</h1>
+        <div class="offer-wrapper">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmHJCWVjefPkZFdQvIuVocVjdkra_KI77Vuw&usqp=CAU">
+            <div class="offer-title">Шаха ебанная</div>
+            <div class="description">Купить еб**ь</div>
+        </div>
+    </section>
     <section class="reviews" id="reviews">
         <h1>Отзывы наших клиентов</h1>
         <div class="reviewswrapper">

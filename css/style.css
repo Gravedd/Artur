@@ -271,3 +271,8 @@ footer .menulinks {
 .reviewtext {
     word-wrap: break-word;
 }
+.tosell {
+    width: 100%;
+    padding: 16px 16px 58px 16px;
+    background-color: var(--bg-color);
+}
