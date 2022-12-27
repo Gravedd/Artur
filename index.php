@@ -5,6 +5,10 @@
     $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
     for ($rewiews = []; $row = mysqli_fetch_assoc($result); $rewiews[] = $row);
 
+    $query = "SELECT * FROM `catalog`";
+    $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+    for ($catalog = []; $row = mysqli_fetch_assoc($result); $catalog[] = $row);
+
 
 ?>
 <!DOCTYPE html>
@@ -36,25 +40,31 @@
     </div>
     <section class="tosell">
         <h1>Готовые предложения</h1>
-        <div class="offer-wrapper">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmHJCWVjefPkZFdQvIuVocVjdkra_KI77Vuw&usqp=CAU">
-            <div class="offer-title">Шаха ебанная</div>
-            <div class="description">Купить еб**ь</div>
+        <div class="offers">
+            <?php foreach ($catalog as $item) { ?>
+                <div class="offer-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmHJCWVjefPkZFdQvIuVocVjdkra_KI77Vuw&usqp=CAU">
+                    <div class="offer-title"><?= $item['title'] ?></div>
+                    <div class="description"><?= $item['description'] ?></div>
+                    <form class="offer-claim" method="post" action="/scripts/addclaim.php">
+                        <input type="text" name="name" placeholder="Ваше имя...">
+                        <input type="tel" name="number" placeholder="Номер телефона...">
+                        <input type="hidden" name="product_id" value="<?= $item['id'] ?>">
+                        <button type="btn">Купить</button>
+                    </form>
+                </div>
+            <?php } ?>
         </div>
     </section>
     <section class="reviews" id="reviews">
         <h1>Отзывы наших клиентов</h1>
         <div class="reviewswrapper">
-            <?php
-                foreach ($rewiews as $rewiew) {
-                    ?>
-                    <div class="reviewwrapper">
-                        <h3><?php echo $rewiew['name'] ?></h3>
-                        <div class="reviewtext"><?php echo $rewiew['comment'] ?></div>
-                    </div>
-                    <?php
-                }
-            ?>
+            <?php foreach ($rewiews as $rewiew) { ?>
+                <div class="reviewwrapper">
+                    <h3><?php echo $rewiew['name'] ?></h3>
+                    <div class="reviewtext"><?php echo $rewiew['comment'] ?></div>
+                </div>
+            <?php } ?>
         </div>
     </section>
     <section class="addreview">

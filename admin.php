@@ -7,6 +7,11 @@ $query = "SELECT * FROM `claims`";
 $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
 for ($claims = []; $row = mysqli_fetch_assoc($result); $claims[] = $row) ;
 
+
+$query = "SELECT * FROM `catalog`";
+$result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+for ($catalog = []; $row = mysqli_fetch_assoc($result); $catalog[] = $row);
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -25,6 +30,7 @@ for ($claims = []; $row = mysqli_fetch_assoc($result); $claims[] = $row) ;
             <tr>
                 <th>Имя</th>
                 <th colspan="2">Номер телефона</th>
+                <th>Продукт</th>
             </tr>
             <?php
             foreach ($claims as $claim) {
@@ -32,6 +38,13 @@ for ($claims = []; $row = mysqli_fetch_assoc($result); $claims[] = $row) ;
                 <tr>
                     <td><?php echo $claim['name'] ?></td>
                     <td><?php echo $claim['number'] ?></td>
+                    <td>
+                        <?php if ($claim['product_id']) { ?>
+                            <?= $catalog[$claim['product_id']]['title'] ?>
+                        <?php } else {?>
+                            -
+                        <?php } ?>
+                    </td>
                     <td><a href="/scripts/deleteclaim.php?id=<?php echo $claim['id']?>">Удалить заявку</a></td>
                 </tr>
                 <?php
