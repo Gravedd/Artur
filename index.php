@@ -27,7 +27,7 @@
             <div class="tag">Мы подберем для вас оптимальное предложение на рынке с гарантией технической и юридической чистоты</div><br><br>
             <? if (!isset($_SESSION['claim'])) { ?>
             <form class="claimform" method="post" action="/scripts/addclaim.php">
-                <? if (isset($_SESSION['errors'])) { echo $_SESSION['errors']; unset($_SESSION['errors']); } ?>
+                <? if (isset($_SESSION['errors'])) { echo "<script>alert('". $_SESSION['errors']."')</script>"; unset($_SESSION['errors']); } ?>
                 <input type="text" name="name" placeholder="Ваше имя...">
                 <input type="tel" name="number" placeholder="Номер телефона...">
                 <button type="submit">Подобрать авто</button>
