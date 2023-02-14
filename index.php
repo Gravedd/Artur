@@ -43,7 +43,7 @@
         <div class="offers">
             <?php foreach ($catalog as $item) { ?>
                 <div class="offer-wrapper">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmHJCWVjefPkZFdQvIuVocVjdkra_KI77Vuw&usqp=CAU">
+                    <img src="<?= $item['image'] ?>" width="200">
                     <div class="offer-title"><?= $item['title'] ?></div>
                     <div class="description"><?= $item['description'] ?></div>
                     <form class="offer-claim" method="post" action="/scripts/addclaim.php">
