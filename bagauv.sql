@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 29 2022 г., 16:38
+-- Время создания: Фев 14 2023 г., 16:38
 -- Версия сервера: 8.0.24
--- Версия PHP: 7.4.21
+-- Версия PHP: 7.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,22 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `catalog`
+--
+
+CREATE TABLE `catalog` (
+  `id` int NOT NULL,
+  `title` varchar(64) NOT NULL,
+  `description` text NOT NULL,
+  `image` varchar(128) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `claims`
 --
 
 CREATE TABLE `claims` (
   `id` int NOT NULL,
   `name` varchar(32) NOT NULL,
-  `number` varchar(15) NOT NULL
+  `number` varchar(15) NOT NULL,
+  `product_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Дамп данных таблицы `claims`
---
-
-INSERT INTO `claims` (`id`, `name`, `number`) VALUES
-(3, 'Олег', '+79023213135'),
-(4, 'Виктор', '+79023246096');
 
 -- --------------------------------------------------------
 
@@ -52,15 +58,6 @@ CREATE TABLE `comments` (
   `name` varchar(32) NOT NULL,
   `comment` varchar(430) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Дамп данных таблицы `comments`
---
-
-INSERT INTO `comments` (`id`, `name`, `comment`) VALUES
-(1, 'Олег', 'Норм сайт рекомендую'),
-(2, 'Матвей', 'Норм сайт рекомендую к использованию'),
-(3, 'Олег', 'норм ❤');
 
 -- --------------------------------------------------------
 
@@ -75,15 +72,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Дамп данных таблицы `users`
---
-
-INSERT INTO `users` (`id`, `login`, `password`) VALUES
-(1, 'admin', 'admin');
-
---
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `catalog`
+--
+ALTER TABLE `catalog`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `claims`
@@ -108,22 +104,28 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `catalog`
+--
+ALTER TABLE `catalog`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT для таблицы `claims`
 --
 ALTER TABLE `claims`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
