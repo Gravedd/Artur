@@ -39,7 +39,7 @@
         <div class="claim carsbg"></div>
     </div>
     <section class="tosell">
-        <h1>Готовые предложения</h1>
+        <h1 style="text-align: center;margin-bottom: 16px;font-size: 23pt;">Готовые предложения</h1>
         <div class="offers">
             <?php foreach ($catalog as $item) { ?>
                 <div class="offer-wrapper">
