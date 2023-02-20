@@ -40,7 +40,12 @@ for ($catalog = []; $row = mysqli_fetch_assoc($result); $catalog[] = $row);
                     <td><?php echo $claim['number'] ?></td>
                     <td>
                         <?php if ($claim['product_id']) { ?>
-                            <?= $catalog[$claim['product_id']]['title'] ?>
+                            <?
+                            $query = "SELECT * FROM `catalog` WHERE `id` = ".$claim['product_id'];
+                            $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+                            $row = mysqli_fetch_assoc($result);
+                            echo $row['title'] ?? "-";
+                            ?>
                         <?php } else {?>
                             -
                         <?php } ?>
