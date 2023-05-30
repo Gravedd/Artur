@@ -21,7 +21,7 @@
     }
     if (isset($result)) {
         $_SESSION['claim'] = true;
-        header('Location: /index.php');
+        header('Location: /thank_you.php');
     } else {
         header('Location: /index.php');
     }
