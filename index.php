@@ -46,12 +46,7 @@
                     <img src="<?= $item['image'] ?>" width="200">
                     <div class="offer-title"><?= $item['title'] ?></div>
                     <div class="description"><?= $item['description'] ?></div>
-                    <form class="offer-claim" method="post" action="/scripts/addclaim.php">
-                        <input type="text" name="name" placeholder="Ваше имя...">
-                        <input type="tel" name="number" placeholder="Номер телефона...">
-                        <input type="hidden" name="product_id" value="<?= $item['id'] ?>">
-                        <button type="btn">Купить</button>
-                    </form>
+                    <button type="btn" onclick="showBuyModal(<?= $item['id'] ?>)" class="btn" style="padding: 8px 32px;">Купить</button>
                 </div>
             <?php } ?>
         </div>
@@ -83,5 +78,35 @@
 
 
 </div>
+
+<div class="modal-window hidden" id="modal-window-back">
+    <div class="modal-wrapper" id="modal_wrapper">
+        <h2>Заказать</h2>
+        <form class="offer-claim" method="post" action="/scripts/addclaim.php">
+            <input type="text" name="name" placeholder="Ваше имя...">
+            <input type="tel" name="number" placeholder="Номер телефона...">
+            <input type="hidden" name="product_id" value="" id="modal-window-form-prod_id">
+            <button type="btn" class="btn">Купить</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    const modal = document.getElementById("modal-window-back");
+    const modal_wrapper = document.getElementById("modal_wrapper");
+
+    modal.addEventListener("click", function () {
+         modal.classList.add("hidden");
+    });
+
+    modal_wrapper.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+
+    function showBuyModal(prod_id) {
+        document.getElementById("modal-window-form-prod_id").value = prod_id;
+        modal.classList.remove("hidden");
+    }
+</script>
 </body>
 </html>
