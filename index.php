@@ -5,7 +5,7 @@
     $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
     for ($rewiews = []; $row = mysqli_fetch_assoc($result); $rewiews[] = $row);
 
-    $query = "SELECT * FROM `catalog`";
+    $query = "SELECT * FROM `catalog` ORDER BY `ID` DESC LIMIT 4";
     $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
     for ($catalog = []; $row = mysqli_fetch_assoc($result); $catalog[] = $row);
 
@@ -43,7 +43,7 @@
         <div class="offers">
             <?php foreach ($catalog as $item) { ?>
                 <div class="offer-wrapper">
-                    <img src="<?= $item['image'] ?>" width="200">
+                    <img src="<?= $item['image'] ?>" height="200">
                     <div class="offer-title"><?= $item['title'] ?></div>
                     <div class="description"><?= $item['description'] ?></div>
                     <button type="btn" onclick="showBuyModal(<?= $item['id'] ?>)" class="btn" style="padding: 8px 32px;">Купить</button>

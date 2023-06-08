@@ -287,6 +287,10 @@ footer .menulinks {
     width: 20%;
     margin-right: 16px;
 }
+.offer-wrapper img {
+    object-fit: cover;
+    width: 100%;
+}
 .btn {
     background-color: var(--cont-color);
     padding: 8px;
@@ -333,4 +337,47 @@ footer .menulinks {
 }
 .hidden {
     display: none !important;
+}
+
+
+.admin-products-wrapper {
+    margin-top: 16px;
+}
+.admin_product {
+    display: flex;
+    margin-top: 8px;
+}
+.admin_product_id {
+    width: 5%;
+}
+.admin_product_title {
+    width: 30%;
+}
+.admin_product_desc {
+    width: 55%;
+    word-break: break-word;
+}
+.admin_product_img {
+    word-break: break-word;
+    height: 50px;
+}
+
+.admin_add_product_form {
+    margin-top: 16px;
+}
+.admin_add_product_form label{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+.admin_add_product_form label input, .admin_add_product_form label textarea{
+    height: 40px;
+    padding: 4px;
+}
+.admin_add_product_form label input[type="submit"]{
+    background-color: var(--cont-color);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
 }
