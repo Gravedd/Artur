@@ -381,3 +381,6 @@ footer .menulinks {
     border-radius: 10px;
     font-size: 16px;
 }
+.admin_product_delete a {
+    color: #ff002a;
+}

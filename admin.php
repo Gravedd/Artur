@@ -61,6 +61,9 @@ for ($catalog = []; $row = mysqli_fetch_assoc($result); $catalog[] = $row);
                         <div class="admin_product_img">
                             <img height="50" src="<?= $product['image'] ?>">
                         </div>
+                        <div class="admin_product_delete">
+                            <a href="/scripts/deleteproduct.php?id=<?= $product['id'] ?>">Удалить</a>
+                        </div>
                     </div>
                 <?php } ?>
 
